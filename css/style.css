@@ -65,20 +65,20 @@ body {
 
 .host{
   position: absolute;
-  right: 25px;
+  left: 25px;
   top: 125px;
 }
 
 .test{
   position: absolute;
-  right: 300px;
-  top: 190px;
+  left: 330px;
+  top: 185px;
 }
 
 .mail{
   position: absolute;
-  right: 470px;
-  top: 255px;
+  left: 490px;
+  top: 260px;
 }
 
 .content{
