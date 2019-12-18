@@ -27,38 +27,58 @@ body {
 .page-header a{
   color: #fad48c;
   text-shadow: -4px 6px #25282d;
-  text-decoration: none;
   font-weight: bold;
   font-size: 35px;
   line-height: 55px;
   font-family: "Georgia", serif;
+  display: inline-block;
+  line-height: 1;
+  text-decoration:none;
+  cursor: pointer;
+  position:relative;
 
 }
 
-.page-header a:hover {
-  color: #ffffff;
+.page-header a::after{
+  background-color: #fad48c;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  left:50%;
+  position:absolute;
+  -webkit-transition: width .3s ease-in-out;
+  -moz--transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  -webkit-transform:translateX(-50%);
+  -moz-transform:translateX(-50%);
+  transform:translateX(-50%);
 }
 
+.page-header a:hover:after,
+.page-header a:focus:after {
+    width: 100%;
+}
 .page-header a:active {
   color: rgba(255, 255, 255, 0.4);
 }
 
 .host{
   position: absolute;
-  right: 35px;
-  top: 115px;
+  right: 25px;
+  top: 125px;
 }
 
 .test{
   position: absolute;
   right: 300px;
-  top: 185px;
+  top: 190px;
 }
 
 .mail{
   position: absolute;
   right: 470px;
-  top: 245px;
+  top: 255px;
 }
 
 .content{
