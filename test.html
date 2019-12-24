@@ -2,8 +2,55 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Графические файлы</title>
+    <title>Тест</title>
     <link rel="stylesheet" href="css/style.css">
+    <script language="JavaScript">
+      function checker(){
+
+       var str = "<h2> Результаты теста</h2>";
+       var name = document.getElementById("name").value;
+       var div = document.getElementById('id');
+       var first = document.querySelector('input[name="queone"]:checked').value;
+       var second = document.querySelector('input[name="quetwo"]:checked').value;
+       var three = document.querySelector('input[name="queth"]:checked').value;
+       var counter = 0;
+
+       str += "<br>";
+       str += "<b> Тестируемый: ";
+       str += name;
+       str += "<br>";
+       str += "<hr> <br>"
+       str += "1 вопрос - ";
+
+       if (first == 2) {
+         str += "<font color = 'green'> Верно </font> <br>";
+         counter++;
+       }else{
+         str += "<font color = 'red'> Неверно </font> <br>";
+       }
+
+       str += "2 вопрос - ";
+
+       if (second == 3) {
+         str += "<font color = 'green'> Верно </font> <br>";
+         counter++;
+       }else{
+         str += "<font color = 'red'> Неверно </font> <br>";
+       }
+
+       str += "3 вопрос - ";
+
+       if (three == 2) {
+         str += "<font color = 'green'> Верно </font> <br>";
+         counter++;
+       }else{
+         str += "<font color = 'red'> Неверно </font> <br>";
+       }
+
+      str += "<i>Количество баллов - " + counter + "<i>";
+      div.innerHTML += str;
+      }
+    </script>
   </head>
   <body>
     <div class="page-header">
@@ -15,8 +62,49 @@
         <a href="test.html">Тест</a>
         </div>
         <div class="mail">
-        <a href="mail.html">Обратная связь</a>
+        <a href="mail.php">Обратная связь</a>
         </div>
+      </div>
+      <div class="content">
+        <h2>Тест</h2>
+        <div class="flex_box">
+          <div class="test_form">
+            <form name = "form">
+              <p>Введите своё имя</p>
+              <input type="text" id="name" placeholder="Например: Александр">
+              <br>
+              <p>Какая компания создала WebP формат?</p>
+              <br>
+              <input name="queone" type="radio" value="1"> Apple
+              <input name="queone" type="radio" value="2"> Google
+              <input name="queone" type="radio" value="3"> Microsoft
+              <br>
+              <p>С какого года существует SVG формат?</p>
+              <br>
+              <input name="quetwo" type="radio" value="1"> с 2003 года
+              <input name="quetwo" type="radio" value="2"> с 1996 года
+              <input name="quetwo" type="radio" value="3"> с 1999 года
+              <br><br>
+              <p>PNG8 может хранить какое количество цветов?</p>
+              <br>
+              <input name="queth" type="radio" value="1"> 128 тысяч
+              <input name="queth" type="radio" value="2"> 256
+              <input name="queth" type="radio" value="3"> 16 миллионов
+              <br><br>
+              <input type="button" value="Завершить тестирование" OnClick="checker()"/>
+              <br><br>
+            </form>
+          </div>
+          <div class="result" id = "id"></div>
+        </div>
+        </div>
+
+
+
+      <div class="footer">
+        <br>
+        <p>Данный сайт был разработан в рамках курсовой работы по направлению "Web технологии"
+студентом 3го курса - Чугуненко Александром Сергеевичем</p>
       </div>
   </body>
 </html>
